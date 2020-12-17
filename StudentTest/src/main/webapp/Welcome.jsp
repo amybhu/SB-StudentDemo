@@ -16,7 +16,7 @@
   div {
  
   width: 500px;
-  border: 15px solid green;
+  border: 15px solid red;
   padding: 50px;
   margin: 20px;
 }
