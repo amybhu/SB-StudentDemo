@@ -8,7 +8,7 @@ pipeline{
 				
 					sh '''
           cd StudentTest
-          mvn clean install
+          mvn compile test package sonar:sonar
     '''
 		    }
 	    }	
