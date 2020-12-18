@@ -1,0 +1,21 @@
+pipeline{
+	agent any
+	
+	stages{
+	
+		stage('Compile Stage'){
+			steps{
+				
+					sh '''
+          cd StudentTest
+          mvn clean install
+    '''
+		    }
+	    }	
+	}
+	 post {
+      always {
+        junit 'StudentTest/target/surefire-reports/*.xml'
+      }
+   } 
+}
