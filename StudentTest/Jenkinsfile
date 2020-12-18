@@ -12,16 +12,7 @@ pipeline{
     '''
 		    }
 	    }
-	    stage('deploy Stage'){
-			steps{
-				
-					sh '''
-          cd StudentTest
-          mvn deploy
-    '''
-		    }
-	    }		
-	}
+	 }
 	 post {
       always {
         junit 'StudentTest/target/surefire-reports/*.xml'

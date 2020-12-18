@@ -21,7 +21,7 @@ class StudentTest {
 	}
 	@Test
 	void testgrade() {
-		Assertions.assertEquals("a", "a", "result");
+		Assertions.assertEquals(1, "a", "result");
 	}
 
 	
