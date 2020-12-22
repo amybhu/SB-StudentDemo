@@ -26,8 +26,10 @@ pipeline{
 	    
 		stage('Deploy Stage'){
 			steps{
-				
-				echo "Deploy stage"
+				sh '''
+				cd StudentTest
+				ansible-playbook Demo.yml
+			'''
 		    }
 	    }
 	    
