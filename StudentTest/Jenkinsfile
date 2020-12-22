@@ -8,14 +8,38 @@ pipeline{
 				
 					sh '''
           cd StudentTest
-          mvn compile test package sonar:sonar
+          mvn compile 
     '''
 		    }
 	    }
+	    
+	    stage('Test Stage'){
+			steps{
+			
+				 junit 'StudentTest/target/surefire-reports/*.xml'
+		    }
+	    }
+	    
+	    
+		stage('QA test Stage'){
+			steps{
+				
+					sh '''
+          cd StudentTest
+          mvn clean test package sonar:sonar
+    '''
+		    }
+	    }
+	    
+	    
+		stage('Deploy Stage'){
+			steps{
+				
+				echo "Deploy stage"
+		    }
+	    }
+	    
+	    
 	 }
-	 post {
-      always {
-        junit 'StudentTest/target/surefire-reports/*.xml'
-      }
-   } 
+	 
 }
