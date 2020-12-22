@@ -13,14 +13,6 @@ pipeline{
 		    }
 	    }
 	    
-	    stage('Test Stage'){
-			steps{
-			
-				 junit 'StudentTest/target/surefire-reports/*.xml'
-		    }
-	    }
-	    
-	    
 		stage('QA test Stage'){
 			steps{
 				
@@ -39,7 +31,11 @@ pipeline{
 		    }
 	    }
 	    
-	    
 	 }
+	 post{
+	  	always{
+	  	 	junit 'StudentTest/target/surefire-reports/*.xml'
+	  	 }
+	  	}
 	 
 }
