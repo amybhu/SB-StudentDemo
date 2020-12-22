@@ -28,7 +28,7 @@ pipeline{
 			steps{
 				sh '''
 				cd StudentTest
-				mvn spring-boot:run
+				ansible-playbook Demo.yml
 			'''
 		    }
 	    }
